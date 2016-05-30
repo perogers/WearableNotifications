@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">WearableNotification</string>
+    <string name="action_settings">Settings</string>
+    <string name="button.send_notification">Send</string>
+    <string name="text.app_description">Hit Send button to generate notification</string>
+
+    // Notification Strings
+    <string name="notification.title">Test Title</string>
+    <string name="notification.content">Test content this is a test</string>
+</resources>
