@@ -3,8 +3,6 @@ package org.perogers.android.wearablenotification;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.NotificationManagerCompat;
 import android.support.v4.app.RemoteInput;
@@ -21,21 +19,14 @@ public class MainActivity extends AppCompatActivity {
     // Key for the string that's delivered in the action's intent
     private static final String EXTRA_VOICE_REPLY = "extra_voice_reply";
 
+    private static int sNotificationNumber = 1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
     }
 
 
@@ -54,12 +45,20 @@ public class MainActivity extends AppCompatActivity {
         PendingIntent resultPendingIntent =
                 PendingIntent.getActivity(this, 0, resultIntent, 0);
 
+        NotificationCompat.Action action =
+                new NotificationCompat.Action.Builder(R.drawable.ic_notifications_white_18dp,
+                        getString(R.string.notification_label),
+                        resultPendingIntent)
+                        .build();
+
+
+
         NotificationCompat.Builder notificationBuilder =
                 new NotificationCompat.Builder(this)
                         .setSmallIcon(R.drawable.ic_notifications_white_18dp)
-                        .setContentTitle( getString(R.string.notification_title) )
-                        .setContentText( getString(R.string.notification_content) )
-                        .setContentIntent(resultPendingIntent);
+                        .setContentTitle( getString(R.string.notification_title) + " - " + sNotificationNumber++ )
+                        .setContentText( getString(R.string.notification_content))
+                        .extend(new NotificationCompat.WearableExtender().addAction( action ));
 
         // Get an instance of the NotificationManager service
         NotificationManagerCompat notificationManager =

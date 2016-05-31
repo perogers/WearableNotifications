@@ -5,6 +5,7 @@
     <string name="text.app_description">Hit Send button to generate notification</string>
 
     // Notification Strings
+    <string name="notification.label">Test Label</string>
     <string name="notification.title">Test Title</string>
     <string name="notification.content">Test content this is a test</string>
 
