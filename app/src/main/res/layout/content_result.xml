@@ -10,20 +10,12 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="org.perogers.android.wearablenotification.MainActivity"
-    tools:showIn="@layout/activity_main">
+    tools:context="org.perogers.android.wearablenotification.ResultActivity"
+    tools:showIn="@layout/activity_result">
 
     <TextView
-        android:id="@+id/description_text"
-        android:text="@string/text.app_description"
+        android:id="@+id/voice_text"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-    <Button
-        android:id="@+id/notification_button"
-        android:layout_below="@id/description_text"
-        android:text="@string/button.send_notification"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="notifyButton"/>
+        android:layout_height="match_parent"/>
 
 </RelativeLayout>

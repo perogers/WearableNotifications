@@ -7,4 +7,7 @@
     // Notification Strings
     <string name="notification.title">Test Title</string>
     <string name="notification.content">Test content this is a test</string>
+
+    <string name="reply_label">Say something</string>
+    <string name="title_activity_result">ResultActivity</string>
 </resources>
