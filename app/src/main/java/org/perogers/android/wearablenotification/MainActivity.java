@@ -67,14 +67,6 @@ public class MainActivity extends AppCompatActivity {
         // Build the notification and issues it with notification manager.
         notificationManager.notify(notificationId, notificationBuilder.build());
 
-        // Voice response
-    /*
-        String replyLabel = getResources().getString(R.string.reply_label);
-
-        RemoteInput remoteInput = new RemoteInput.Builder(EXTRA_VOICE_REPLY)
-                .setLabel(replyLabel)
-                .build();
-*/
         Log.i(TAG, "Notification sent");
 
 
